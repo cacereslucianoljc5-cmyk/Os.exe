@@ -84,9 +84,10 @@ header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(2
 .halo{position:absolute;width:150%;height:150%;left:-25%;top:-25%;z-index:-1;
   background:radial-gradient(closest-side,rgba(57,255,160,.35),transparent 70%);animation:pulse 6s ease-in-out infinite}
 h1.mega{font-family:var(--head);font-weight:900;line-height:.92;font-size:clamp(2rem,9vw,6.6rem);
-  letter-spacing:.02em;color:var(--ink);max-width:100%;overflow-wrap:break-word;word-break:break-word;text-shadow:0 3px 0 rgba(0,0,0,.35),0 0 46px rgba(34,209,126,.35)}
+  letter-spacing:.02em;color:var(--ink);max-width:100%;padding:0 8px;text-shadow:0 3px 0 rgba(0,0,0,.35),0 0 46px rgba(34,209,126,.35)}
 h1.mega .l{display:inline-block;opacity:0;transform:translateY(40px) rotateX(-40deg);animation:drop .7s cubic-bezier(.2,.9,.25,1.2) forwards}
 h1.mega .gold{color:var(--gold);text-shadow:0 3px 0 rgba(0,0,0,.35),0 0 40px rgba(245,183,49,.5)}
+h1.mega .word{display:inline-block;white-space:nowrap}
 @keyframes drop{to{opacity:1;transform:none}}
 .scripture{font-family:var(--head);font-style:italic;font-weight:600;color:var(--g-lime);
   font-size:clamp(1rem,2.6vw,1.4rem);margin:18px 0 8px;max-width:44ch;opacity:0;animation:fadeUp .8s ease .9s forwards}
@@ -289,13 +290,15 @@ footer .brand{justify-content:center;margin-bottom:14px}
 <script>
 (function(){
   var text="BOKE OF THE MEMES";var el=document.getElementById('megaTitle');
-  var frag=document.createDocumentFragment();var d=0;
+  var frag=document.createDocumentFragment();var d=0;var word=null;
   for(var i=0;i<text.length;i++){
     var ch=text[i];
-    if(ch===' '){frag.appendChild(document.createTextNode(' '));continue;}
+    if(ch===' '){if(word){frag.appendChild(word);word=null;}frag.appendChild(document.createTextNode(' '));continue;}
+    if(!word){word=document.createElement('span');word.className='word';}
     var s=document.createElement('span');s.className=(i>=12)?'l gold':'l';
-    s.textContent=ch;s.style.animationDelay=(0.15+d*0.055)+'s';d++;frag.appendChild(s);
+    s.textContent=ch;s.style.animationDelay=(0.15+d*0.055)+'s';d++;word.appendChild(s);
   }
+  if(word){frag.appendChild(word);}
   el.appendChild(frag);
 })();
 function copyCA(){
