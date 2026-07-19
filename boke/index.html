@@ -83,8 +83,8 @@ header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(2
 .book img{width:100%;height:100%;object-fit:cover;display:block}
 .halo{position:absolute;width:150%;height:150%;left:-25%;top:-25%;z-index:-1;
   background:radial-gradient(closest-side,rgba(57,255,160,.35),transparent 70%);animation:pulse 6s ease-in-out infinite}
-h1.mega{font-family:var(--head);font-weight:900;line-height:.92;font-size:clamp(2.9rem,11vw,6.6rem);
-  letter-spacing:.02em;color:var(--ink);text-shadow:0 3px 0 rgba(0,0,0,.35),0 0 46px rgba(34,209,126,.35)}
+h1.mega{font-family:var(--head);font-weight:900;line-height:.92;font-size:clamp(2rem,9vw,6.6rem);
+  letter-spacing:.02em;color:var(--ink);max-width:100%;overflow-wrap:break-word;word-break:break-word;text-shadow:0 3px 0 rgba(0,0,0,.35),0 0 46px rgba(34,209,126,.35)}
 h1.mega .l{display:inline-block;opacity:0;transform:translateY(40px) rotateX(-40deg);animation:drop .7s cubic-bezier(.2,.9,.25,1.2) forwards}
 h1.mega .gold{color:var(--gold);text-shadow:0 3px 0 rgba(0,0,0,.35),0 0 40px rgba(245,183,49,.5)}
 @keyframes drop{to{opacity:1;transform:none}}
@@ -292,7 +292,7 @@ footer .brand{justify-content:center;margin-bottom:14px}
   var frag=document.createDocumentFragment();var d=0;
   for(var i=0;i<text.length;i++){
     var ch=text[i];
-    if(ch===' '){frag.appendChild(document.createTextNode('\u00A0'));continue;}
+    if(ch===' '){frag.appendChild(document.createTextNode(' '));continue;}
     var s=document.createElement('span');s.className=(i>=12)?'l gold':'l';
     s.textContent=ch;s.style.animationDelay=(0.15+d*0.055)+'s';d++;frag.appendChild(s);
   }
