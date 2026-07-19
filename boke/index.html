@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BOKE OF THE MEMES — $BOME</title>
+<meta name="description" content="BOKE OF THE MEMES. The Sacred Book has been revealed. Join the Legion or be left behind. $BOME to the moon."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg0:#02100a;--g-mid:#0d7a45;--g-bright:#22d17e;--g-lime:#7dffb0;--g-neon:#39ffa0;
+  --gold:#ffd76a;--gold2:#f5b731;--ink:#eafff2;--ink-dim:#a9d8bf;
+  --line:rgba(125,255,176,.14);
+  --head:'Cinzel',serif;--body:'Space Grotesk',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--bg0);overflow-x:hidden;line-height:1.6}
+
+/* AURORA BACKGROUND */
+.scene{position:fixed;inset:0;z-index:-5;overflow:hidden;
+  background:radial-gradient(140% 120% at 50% -10%,#06341f 0%,#03180e 45%,#010a06 100%)}
+.aurora{position:absolute;left:50%;top:50%;width:170vmax;height:170vmax;
+  transform:translate(-50%,-50%);will-change:transform;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.band{position:absolute;inset:0;border-radius:46% 54% 60% 40%/50% 46% 54% 50%;
+  mix-blend-mode:screen;filter:blur(60px);opacity:.55}
+.band.a{background:conic-gradient(from 120deg at 40% 40%,transparent 0deg,#0d7a45 60deg,#22d17e 140deg,transparent 220deg);animation:spinA 40s linear infinite}
+.band.b{background:conic-gradient(from 300deg at 60% 55%,transparent 0deg,#39ffa0 70deg,#0a5f38 160deg,transparent 250deg);animation:spinB 55s linear infinite}
+.band.c{background:radial-gradient(closest-side at 50% 50%,rgba(125,255,176,.5),transparent 70%);width:70%;height:70%;left:15%;top:12%;animation:pulse 12s ease-in-out infinite}
+@keyframes spinA{to{transform:rotate(360deg)}}
+@keyframes spinB{to{transform:rotate(-360deg)}}
+@keyframes pulse{50%{transform:scale(1.18);opacity:.85}}
+
+/* drifting starfield canvas */
+#stars{position:fixed;inset:0;z-index:-4;pointer-events:none}
+.grain{position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.045;
+  background-image:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 3px);animation:grain 9s steps(6) infinite}
+@keyframes grain{to{background-position:0 60px}}
+.vignette{position:fixed;inset:0;z-index:-2;pointer-events:none;box-shadow:inset 0 0 220px 60px rgba(0,0,0,.75)}
+@media (prefers-reduced-motion:reduce){.band,.grain{animation:none!important}}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{position:relative;padding:86px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:.32em;
+  font-size:.7rem;color:var(--g-lime);border:1px solid var(--line);padding:7px 15px;border-radius:100px;
+  background:rgba(13,122,69,.14);backdrop-filter:blur(6px)}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--g-neon);
+  box-shadow:0 0 12px var(--g-neon);animation:blip 1.8s ease-in-out infinite}
+@keyframes blip{50%{opacity:.3;transform:scale(.7)}}
+h2.title{font-family:var(--head);font-weight:800;line-height:1.04;font-size:clamp(2rem,6vw,3.7rem);
+  margin:20px 0 14px;color:var(--ink);text-shadow:0 2px 24px rgba(34,209,126,.28)}
+.lede{color:var(--ink-dim);max-width:60ch;font-size:1.12rem}
+
+header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(2,16,10,.82),rgba(2,16,10,.25));
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto;padding:13px 22px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--head);font-weight:800;font-size:1.15rem;letter-spacing:.06em}
+.brand .mark{width:15px;height:15px;background:var(--g-neon);border-radius:3px;box-shadow:0 0 14px var(--g-neon);transform:rotate(45deg)}
+.brand em{color:var(--g-lime);font-style:normal}
+.nav-links{display:flex;gap:26px}
+.nav-links a{color:var(--ink-dim);text-decoration:none;text-transform:uppercase;font-size:.78rem;letter-spacing:.16em;transition:.2s}
+.nav-links a:hover{color:var(--g-lime)}
+@media(max-width:780px){.nav-links{display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:none;text-decoration:none;
+  font-family:var(--body);font-weight:700;font-size:.96rem;letter-spacing:.03em;padding:15px 28px;
+  border-radius:100px;transition:.2s transform,.2s box-shadow;position:relative;overflow:hidden}
+.btn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn-primary{background:linear-gradient(120deg,var(--g-bright),var(--g-neon) 60%,var(--g-lime));color:#04160d;box-shadow:0 10px 30px rgba(34,209,126,.4)}
+.btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 42px rgba(57,255,160,.55)}
+.btn-gold{background:linear-gradient(120deg,var(--gold2),var(--gold));color:#2a1c00;box-shadow:0 10px 30px rgba(245,183,49,.4)}
+.btn-gold:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 42px rgba(255,215,106,.55)}
+.btn-ghost{background:rgba(125,255,176,.06);color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--g-neon);color:var(--g-lime)}
+
+.hero{min-height:94vh;display:flex;align-items:center;padding-top:40px;text-align:center}
+.hero-inner{width:100%;display:flex;flex-direction:column;align-items:center}
+.book{width:min(240px,62vw);aspect-ratio:300/419;border-radius:14px;overflow:hidden;
+  border:2px solid rgba(255,215,106,.5);margin-bottom:26px;position:relative;
+  box-shadow:0 24px 70px rgba(0,0,0,.6),0 0 60px rgba(34,209,126,.35)}
+.book img{width:100%;height:100%;object-fit:cover;display:block}
+.halo{position:absolute;width:150%;height:150%;left:-25%;top:-25%;z-index:-1;
+  background:radial-gradient(closest-side,rgba(57,255,160,.35),transparent 70%);animation:pulse 6s ease-in-out infinite}
+h1.mega{font-family:var(--head);font-weight:900;line-height:.92;font-size:clamp(2.9rem,11vw,6.6rem);
+  letter-spacing:.02em;color:var(--ink);text-shadow:0 3px 0 rgba(0,0,0,.35),0 0 46px rgba(34,209,126,.35)}
+h1.mega .l{display:inline-block;opacity:0;transform:translateY(40px) rotateX(-40deg);animation:drop .7s cubic-bezier(.2,.9,.25,1.2) forwards}
+h1.mega .gold{color:var(--gold);text-shadow:0 3px 0 rgba(0,0,0,.35),0 0 40px rgba(245,183,49,.5)}
+@keyframes drop{to{opacity:1;transform:none}}
+.scripture{font-family:var(--head);font-style:italic;font-weight:600;color:var(--g-lime);
+  font-size:clamp(1rem,2.6vw,1.4rem);margin:18px 0 8px;max-width:44ch;opacity:0;animation:fadeUp .8s ease .9s forwards}
+.hero p.sub{color:var(--ink-dim);font-size:1.14rem;max-width:48ch;margin:14px auto 30px;opacity:0;animation:fadeUp .8s ease 1.05s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp .8s ease 1.2s forwards}
+
+.ca{margin:30px auto 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;
+  background:rgba(3,23,14,.7);border:1px solid var(--line);border-radius:100px;padding:9px 10px 9px 18px;
+  max-width:min(560px,92vw);opacity:0;animation:fadeUp .8s ease 1.35s forwards;backdrop-filter:blur(6px)}
+.ca .lbl{text-transform:uppercase;font-size:.64rem;letter-spacing:.2em;color:var(--gold)}
+.ca code{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:52vw}
+.ca button{cursor:pointer;font-family:var(--body);font-weight:600;text-transform:uppercase;font-size:.68rem;letter-spacing:.1em;
+  background:var(--g-neon);color:#04160d;border:none;padding:9px 15px;border-radius:100px;transition:.15s}
+.ca button:hover{background:var(--g-lime)}
+.ca button.ok{background:var(--gold)}
+
+.reveal{opacity:0;transform:translateY(40px);transition:.8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.split.rev{grid-template-columns:.85fr 1.15fr}
+@media(max-width:820px){.split,.split.rev{grid-template-columns:1fr;gap:26px}}
+.shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative;box-shadow:0 22px 60px rgba(0,0,0,.55)}
+.shot img{width:100%;display:block}
+.shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(2,16,10,.55));pointer-events:none}
+.shot .frame{position:absolute;inset:0;border-radius:16px;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(125,255,176,.25),inset 0 0 46px rgba(34,209,126,.22)}
+
+.bullets{list-style:none;margin-top:22px;display:grid;gap:14px}
+.bullets li{display:flex;gap:14px;align-items:flex-start;color:var(--ink-dim);font-size:1.04rem}
+.bullets li b{color:var(--ink);font-weight:700}
+.bullets .dot{flex:none;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;margin-top:1px;
+  background:rgba(34,209,126,.12);border:1px solid var(--line)}
+.bico{width:18px;height:18px;fill:none;stroke:var(--g-neon);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+@media(max-width:640px){.stats{grid-template-columns:1fr}}
+.stat{background:linear-gradient(180deg,rgba(13,122,69,.16),rgba(3,23,14,.5));border:1px solid var(--line);
+  border-radius:14px;padding:22px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--g-neon),var(--gold))}
+.stat b{display:block;font-family:var(--head);font-weight:800;font-size:1.9rem;color:var(--g-lime)}
+.stat span{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--ink-dim)}
+
+blockquote{margin:40px auto 0;max-width:840px;text-align:center;font-family:var(--head);font-style:italic;font-weight:600;
+  font-size:clamp(1.15rem,3vw,1.7rem);color:var(--ink);padding:30px;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);text-shadow:0 0 30px rgba(34,209,126,.25)}
+blockquote span{color:var(--gold)}
+
+.finale{text-align:center;background:radial-gradient(700px 360px at 50% 0%,rgba(34,209,126,.16),transparent 70%);border-top:1px solid var(--line)}
+.finale .btn-gold{font-size:1.2rem;padding:19px 46px;margin-top:24px}
+footer{padding:40px 0 60px;text-align:center;color:var(--ink-dim);font-size:.9rem}
+footer .brand{justify-content:center;margin-bottom:14px}
+.disc{max-width:70ch;margin:16px auto 0;font-size:.76rem;color:rgba(169,216,191,.5);line-height:1.55}
+
+.ripple{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;
+  background:radial-gradient(closest-side,rgba(57,255,160,.55),rgba(255,215,106,.2),transparent);
+  transform:translate(-50%,-50%) scale(0);animation:rip .6s ease-out forwards;mix-blend-mode:screen}
+@keyframes rip{to{transform:translate(-50%,-50%) scale(1);opacity:0}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="ic-eye"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></g>
+<g id="ic-rocket"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></g>
+<g id="ic-sword"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/></g>
+<g id="ic-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></g>
+<g id="ic-pillar"><line x1="4" y1="21" x2="20" y2="21"/><line x1="6" y1="21" x2="6" y2="9"/><line x1="18" y1="21" x2="18" y2="9"/><line x1="10" y1="21" x2="10" y2="9"/><line x1="14" y1="21" x2="14" y2="9"/><path d="M3 9h18l-9-6z"/></g>
+<g id="ic-brain"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2z"/></g>
+<g id="ic-gear"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></g>
+<g id="ic-chart"><line x1="3" y1="21" x2="21" y2="21"/><polyline points="4 15 9 10 13 14 20 5"/><polyline points="20 9 20 5 16 5"/></g>
+<g id="ic-galaxy"><circle cx="12" cy="12" r="2"/><path d="M12 4c-4.5 0-8 3.5-8 8"/><path d="M12 20c4.5 0 8-3.5 8-8"/><path d="M20 12a8 8 0 0 0-4-6.9"/><path d="M4 12a8 8 0 0 0 4 6.9"/></g>
+<g id="ic-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.21-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></g>
+<g id="ic-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></g>
+<g id="ic-bolt"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></g>
+<g id="ic-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></g>
+</defs></svg>
+<div class="scene">
+  <div class="aurora" id="aurora">
+    <span class="band a"></span><span class="band b"></span><span class="band c"></span>
+  </div>
+</div>
+<canvas id="stars"></canvas>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<header>
+  <nav class="nav">
+    <div class="brand"><span class="mark"></span>BOKE<em>·MEMES</em></div>
+    <div class="nav-links">
+      <a href="#call">The Call</a><a href="#force">The Force</a>
+      <a href="#engine">The Engine</a><a href="#legion">Join</a>
+    </div>
+    <a href="https://pump.fun/coin/G6awm952bZikfbKbQkRWACMGALrqSNpWZ2Z5fCUypump" target="_blank" rel="noopener" class="btn btn-primary" style="padding:11px 22px;font-size:.85rem"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-book"/></svg>Buy $BOME</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="book"><div class="halo"></div><img src="https://raw.githubusercontent.com/cacereslucianoljc5-cmyk/Os.exe/claude/vercel-deploy-repo-images-iouosw/boke/book.jpg" alt="The Sacred Book of Memes"/></div>
+    <h1 class="mega" id="megaTitle"></h1>
+    <p class="scripture">"And it was written that shitcoin done pumpeth on the moon..."</p>
+    <p class="sub">The Sacred Book has been revealed to those with the eyes to see. This is your final call to glory before the rocket blasts off — without you.</p>
+    <div class="cta-row">
+      <a href="https://pump.fun/coin/G6awm952bZikfbKbQkRWACMGALrqSNpWZ2Z5fCUypump" target="_blank" rel="noopener" class="btn btn-gold"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-book"/></svg>Buy $BOME Now</a>
+      <a href="#call" class="btn btn-ghost">Read the Scripture</a>
+    </div>
+    <div class="ca">
+      <span class="lbl">Contract</span>
+      <code id="caText">G6awm952bZikfbKbQkRWACMGALrqSNpWZ2Z5fCUypump</code>
+      <button onclick="copyCA()">Copy</button>
+    </div>
+  </div>
+</section>
+
+<section id="call">
+  <div class="wrap reveal">
+    <div class="split">
+      <div>
+        <span class="eyebrow">The Call to Glory</span>
+        <h2 class="title">Tired of Watching Your<br/>"Gems" Melt?</h2>
+        <p class="lede">Enough is enough. Enough of watching your gems melt like ice cream in the sun.</p>
+        <ul class="bullets">
+          <li><span class="dot"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-eye"/></svg></span><span><b>The Vision:</b> The Sacred Book has been revealed to those with the eyes to see.</span></li>
+          <li><span class="dot"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-rocket"/></svg></span><span><b>The Reality:</b> This is your final call to glory before the rocket blasts off to the moon without you.</span></li>
+        </ul>
+      </div>
+      <div class="shot"><img src="https://raw.githubusercontent.com/cacereslucianoljc5-cmyk/Os.exe/claude/vercel-deploy-repo-images-iouosw/boke/shot1.jpg" alt="Boke meme"/><span class="frame"></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="force">
+  <div class="wrap reveal">
+    <span class="eyebrow">A Force of Nature</span>
+    <h2 class="title">Why $BOME Is Unstoppable</h2>
+    <p class="lede">This is not just another memecoin; it is a movement designed for total domination.</p>
+    <div class="stats">
+      <div class="stat"><b>Legion</b><span>Diamond-Handed Army</span></div>
+      <div class="stat"><b>Immune</b><span>To Fear, Uncertainty &amp; Doubt</span></div>
+      <div class="stat"><b>Pillars</b><span>Holding the Price Floor</span></div>
+    </div>
+    <ul class="bullets" style="margin-top:30px">
+      <li><span class="dot"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-sword"/></svg></span><span><b>An Unstoppable Legion:</b> Our community is not just a group of investors; they are an army of diamond-handed warriors.</span></li>
+      <li><span class="dot"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-shield"/></svg></span><span><b>Immune to FUD:</b> We are imperious to fear, uncertainty, and doubt.</span></li>
+      <li><span class="dot"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-pillar"/></svg></span><span><b>Strength in Numbers:</b> Every holder acts as a pillar, holding the price floor with a force that makes Wall Street tremble.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="engine">
+  <div class="wrap reveal">
+    <div class="split rev">
+      <div class="shot"><img src="https://raw.githubusercontent.com/cacereslucianoljc5-cmyk/Os.exe/claude/vercel-deploy-repo-images-iouosw/boke/shot2.jpg" alt="The engine of Boke"/><span class="frame"></span></div>
+      <div>
+        <span class="eyebrow">The Engine</span>
+        <h2 class="title">Behind the Moonshot</h2>
+        <p class="lede">There is no smoke behind this project — only raw, relentless power.</p>
+        <ul class="bullets">
+          <li><span class="dot"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-brain"/></svg></span><span><b>Elite Talent:</b> Thousands of brilliant minds are working day and night to build our future.</span></li>
+          <li><span class="dot"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-gear"/></svg></span><span><b>The Perfect Machine:</b> From master coders to meme commandos, every gear is engineered for one goal — Total Domination.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projection">
+  <div class="wrap reveal">
+    <span class="eyebrow">The Projection</span>
+    <h2 class="title">Not Rising — Exploding</h2>
+    <p class="lede">The $BOME chart isn't just going to rise; it's going to explode.</p>
+    <ul class="bullets" style="margin-top:26px">
+      <li><span class="dot"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-chart"/></svg></span><span><b>Vertical Trajectory:</b> We are set to pierce the sky and leave the atmosphere behind.</span></li>
+      <li><span class="dot"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-galaxy"/></svg></span><span><b>Galactic Growth:</b> We aren't just going to the moon; we are planting our flag in another solar system.</span></li>
+      <li><span class="dot"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-flame"/></svg></span><span><b>Blind the Non-Believers:</b> A violent and glorious liftoff that will leave the skeptics in the dust.</span></li>
+    </ul>
+    <blockquote>"We aren't just going to the moon; we are planting our flag in <span>another solar system.</span>"</blockquote>
+  </div>
+</section>
+
+<section id="legion" class="finale">
+  <div class="wrap reveal">
+    <span class="eyebrow">Join the Legion</span>
+    <h2 class="title">Join the Legion<br/>or Be Left Behind</h2>
+    <p class="lede" style="margin:0 auto">The clock is ticking, and the choice is yours. Grab your phone, turn on your notifications, and prepare for the wildest ride of your life. Join us, the chosen ones, as we get rich in Valhalla.</p>
+    <a href="https://pump.fun/coin/G6awm952bZikfbKbQkRWACMGALrqSNpWZ2Z5fCUypump" target="_blank" rel="noopener" class="btn btn-gold"><svg class="bico" viewBox="0 0 24 24"><use href="#ic-bolt"/></svg>BUY $BOME NOW</a>
+    <div class="ca" style="animation:none;opacity:1;margin-top:26px">
+      <span class="lbl">Contract</span>
+      <code>G6awm952bZikfbKbQkRWACMGALrqSNpWZ2Z5fCUypump</code>
+      <button onclick="copyCA()">Copy</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand"><span class="mark"></span>BOKE<em>·MEMES</em></div>
+  <div>Get rich in Valhalla. · $BOME to another solar system.</div>
+  <p class="disc">BOKE OF THE MEMES ($BOME) is a community meme project with no intrinsic value or expectation of financial return. This page is satire and not financial advice. Crypto is highly volatile — never invest more than you can afford to lose. DYOR.</p>
+</footer>
+
+<script>
+(function(){
+  var text="BOKE OF THE MEMES";var el=document.getElementById('megaTitle');
+  var frag=document.createDocumentFragment();var d=0;
+  for(var i=0;i<text.length;i++){
+    var ch=text[i];
+    if(ch===' '){frag.appendChild(document.createTextNode('\u00A0'));continue;}
+    var s=document.createElement('span');s.className=(i>=12)?'l gold':'l';
+    s.textContent=ch;s.style.animationDelay=(0.15+d*0.055)+'s';d++;frag.appendChild(s);
+  }
+  el.appendChild(frag);
+})();
+function copyCA(){
+  var t='G6awm952bZikfbKbQkRWACMGALrqSNpWZ2Z5fCUypump';
+  var done=function(){
+    document.querySelectorAll('.ca button').forEach(function(b){b.textContent='Copied \u2713';b.classList.add('ok');});
+    setTimeout(function(){document.querySelectorAll('.ca button').forEach(function(b){b.textContent='Copy';b.classList.remove('ok');});},1500);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done).catch(done);}else{done();}
+}
+window.copyCA=copyCA;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.14});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+/* ---- pointer/touch parallax for aurora ---- */
+var aurora=document.getElementById('aurora');
+var tx=0,ty=0,cx=0,cy=0;
+function onMove(px,py){var w=innerWidth,h=innerHeight;tx=(px/w-.5);ty=(py/h-.5);}
+addEventListener('pointermove',function(e){onMove(e.clientX,e.clientY);},{passive:true});
+addEventListener('touchmove',function(e){if(e.touches[0])onMove(e.touches[0].clientX,e.touches[0].clientY);},{passive:true});
+
+/* ---- drifting starfield ---- */
+var cv=document.getElementById('stars'),ctx=cv.getContext('2d');
+var stars=[],W,H,DPR=Math.min(devicePixelRatio||1,2);
+function resize(){W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';build();}
+function build(){
+  stars=[];var n=Math.round((innerWidth*innerHeight)/9000);
+  for(var i=0;i<n;i++){
+    stars.push({x:Math.random()*W,y:Math.random()*H,z:Math.random()*.8+.2,
+      r:(Math.random()*1.4+.3)*DPR,vx:(Math.random()-.5)*.12*DPR,vy:(Math.random()-.5)*.12*DPR,
+      tw:Math.random()*Math.PI*2});
+  }
+}
+addEventListener('resize',resize);resize();
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  cx+=(tx-cx)*.05;cy+=(ty-cy)*.05;
+  aurora.style.transform='translate(calc(-50% + '+(cx*46)+'px), calc(-50% + '+(cy*46)+'px)) rotate('+(cx*4)+'deg)';
+  for(var i=0;i<stars.length;i++){
+    var s=stars[i];
+    s.x+=s.vx;s.y+=s.vy;s.tw+=0.02;
+    s.x+=cx*18*s.z*DPR*0.02;s.y+=cy*18*s.z*DPR*0.02;
+    if(s.x<0)s.x+=W;if(s.x>W)s.x-=W;if(s.y<0)s.y+=H;if(s.y>H)s.y-=H;
+    var a=0.35+Math.sin(s.tw)*0.3*s.z+0.25;
+    ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,6.283);
+    ctx.fillStyle='rgba('+(160+Math.round(60*s.z))+',255,'+(200+Math.round(30*s.z))+','+a.toFixed(3)+')';
+    ctx.shadowBlur=6*DPR;ctx.shadowColor='rgba(57,255,160,'+(a*0.8).toFixed(3)+')';
+    ctx.fill();
+  }
+  ctx.shadowBlur=0;
+  requestAnimationFrame(draw);
+}
+draw();
+
+/* ---- click ripple ---- */
+addEventListener('pointerdown',function(e){
+  var r=document.createElement('span');r.className='ripple';
+  var size=140+Math.random()*60;r.style.width=r.style.height=size+'px';
+  r.style.left=e.clientX+'px';r.style.top=e.clientY+'px';
+  document.body.appendChild(r);setTimeout(function(){r.remove();},600);
+});
+</script>
+</body>
+</html>
